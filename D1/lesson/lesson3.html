@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3</title>
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form action="" method="post">
+        <label for="fname">First Name: </label>
+        <input type="text" name="fname" required><br/>
+
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" required><br/>
+
+        <label for="priority" name="priority">Priority: </label>
+        <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br/>
+
+        <label for="">Gender: </label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br/>
+
+        <label for="">Subscribe to Newsletter: </label>
+        <input type="checkbox" id="newsletter" name="newsletter"><br/>
+
+        Select Color:
+        <input type="color"><br/>
+
+        Select a Number:
+        <input type="number" min="0" max="18">
+
+        <hr>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
