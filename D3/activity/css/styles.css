@@ -62,28 +62,44 @@
     box-shadow: 0 4px 8x rgba(0, 0, 0, 0.1);
 }
 
-.header h1{
-    font-size: 4.5em;
-    /* padding-top: 50px; */
-    margin-bottom: 10px;
+#home, #about{
+    display: flex;
+    margin-bottom: 100px;
 }
 
-#home span{
+#home h1, #about h1{
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    width: 550px;
+}
+
+#home span, #about span{
     color: #FAC031;
 }
 
-#home .tagline{
+#home .tagline {
     margin-left: 50px;
-    margin-right: 150px;
-    margin-bottom: 100px;
+    margin-right: 800px;
+    margin-bottom: 50px;
     padding: 25px;
-    /* border: 3px solid #73AD21; */
+}
+
+#about .tagline{
+    margin-bottom: 50px;
 }
 
 #home img{
     position: absolute;
     top: 150px;
-    right: 150px;
+    right: 100px;
+}
+
+#about img{
+    width: 900px;
+}
+
+#about h1, #about h2{
+    margin: 40px 0;
 }
 
 .order-button{
@@ -91,7 +107,6 @@
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
