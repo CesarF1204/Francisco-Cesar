@@ -68,11 +68,11 @@
     margin-bottom: 10px;
 }
 
-header span{
+#home span{
     color: #FAC031;
 }
 
-header .tagline{
+#home .tagline{
     margin-left: 50px;
     margin-right: 150px;
     margin-bottom: 100px;
@@ -80,7 +80,7 @@ header .tagline{
     /* border: 3px solid #73AD21; */
 }
 
-header img{
+#home img{
     position: absolute;
     top: 150px;
     right: 150px;
