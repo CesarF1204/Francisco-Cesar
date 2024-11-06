@@ -1,0 +1,133 @@
+/* Reset all margin and adding on elements and apply box-sizing */
+*{
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures ppadding and border do not increase */
+}
+
+.container{
+    margin: 0 auto; /* Centers the container horizontally */
+    max-width: 900px; /* Sets a max width of 900px */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.logo{
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navigation links styling */
+.nav-links{
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li{
+    margin-left: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover{
+    color: #0073e6;
+}
+
+/* Header Section */
+.header{
+    background-color: #0073e6;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8x rgba(0, 0, 0, 0.1);
+}
+
+.header h1{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.tagline{
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.cta-button{
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover{
+    background-color: #ff4500;
+}
+
+/* Content Section */
+.content{
+    margin: 20px 0;
+}
+
+.section{
+    margin-bottom: 25px;
+}
+
+.section h2{
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+/* Paragraph text in the content section */
+.section p{
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Profile Image */
+.profile-img{
+    width: 150px;             /* Fixed width for consistent sizing */
+    height: 150px;            /* Fixed height for consistent sizing */
+    border-radius: 50%;       /* Fully rounds the image into a circle */
+    margin-top: 10px;         /* Adds space above image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift image off page */
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-top: 2px solid #555;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #0073e6;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,101 @@
+/* Reset all margin and adding on elements and apply box-sizing */
+*{
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures ppadding and border do not increase */
+}
+
+.container{
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border-bottom: 2px solid rgb(190, 190, 190);
+}
+
+.logo img{
+    width: 150px;
+    margin-left: 100px;
+}
+
+/* Navigation links styling */
+.nav-links, .nav-logo{
+    list-style: none;
+    display: flex;
+}
+
+.nav-logo{
+    margin-right: 100px;
+}
+
+.nav-links li, .nav-logo i{
+    margin-left: 50px;
+}
+
+.nav-links a, .nav-logo i {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links a:hover, .nav-logo i:hover{
+    color: gray;
+    cursor: pointer;
+}
+
+/* Header Section */
+.header{
+    background-image: url("/Francisco-Cesar/D3/activity/images/bg2.jpg");;
+    padding: 30px;
+    margin-top: 100px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8x rgba(0, 0, 0, 0.1);
+}
+
+.header h1{
+    font-size: 4.5em;
+    /* padding-top: 50px; */
+    margin-bottom: 10px;
+}
+
+header span{
+    color: #FAC031;
+}
+
+header .tagline{
+    margin-left: 50px;
+    margin-right: 150px;
+    margin-bottom: 100px;
+    padding: 25px;
+    /* border: 3px solid #73AD21; */
+}
+
+header img{
+    position: absolute;
+    top: 150px;
+    right: 150px;
+}
+
+.order-button{
+    background-color: #FAC031;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover{
+    background-color: #ff6347;
+}
