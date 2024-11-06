@@ -5,6 +5,10 @@
     box-sizing: border-box; /* Ensures ppadding and border do not increase */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container{
     margin: 0 auto;
     font-family: Arial, sans-serif;
@@ -19,6 +23,10 @@
     padding: 15px;
     border-radius: 5px;
     border-bottom: 2px solid rgb(190, 190, 190);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* To make sure it stays on top of other content */
 }
 
 .logo img{
