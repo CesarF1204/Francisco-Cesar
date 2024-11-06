@@ -10,9 +10,9 @@
 <body>
     <div class="container">
         <!-- Navigation Bar -->
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main Navigation">
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="logo">
+                <img src="images/logo.png" alt="Logo">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -24,9 +24,9 @@
             </ul>
 
             <ul class="nav-logo">
-                <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><i class="fa-solid fa-heart"></i></li>
-                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></li>
+                <li><i class="fa-solid fa-heart" aria-hidden="true"></i></li>
+                <li><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></li>
             </ul>
         </nav>
 
@@ -39,13 +39,13 @@
                     <a href="#contact" class="order-button">Order Now ></a>
                 </div>
                 <div class="home-img">
-                    <img src="images/main_img.png" alt="">
+                    <img src="images/main_img.png" alt="Main Image">
                 </div>
             </section>
 
             <section id="about">
                 <div class="about-img">
-                    <img src="images/Food-Plate.png" alt="">
+                    <img src="images/Food-Plate.png" alt="Food Plate">
                 </div>
                 <div class="about-content">
                     <h1><span>About</span> Us</h1>
@@ -54,6 +54,166 @@
                     <a href="#contact" class="order-button">Order Now ></a>
                 </div>
             </section>
+
+            <section id="menu">
+                <div class="menu-container">
+                    <h1>Our <span>Menu</span></h1>
+                    <ul class="menu-img">
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/buger.jpg" alt="Burger">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Burger</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱120</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/pasta.jpg" alt="Pasta">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Pasta</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱150</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/lasagna.webp" alt="Lasagna">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Lasagna</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱100</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/chocolate_drink.jpg" alt="Chocolate Drink">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Chocolate Drink</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱60</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/pizza.jpg" alt="Pizza">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Pizza</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱200</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/hot_dog.jpg" alt="Hot Dog">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Hot Dog</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱50</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/juse.jpg" alt="Juice">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Juice</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱40</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="menu-item">
+                                <img src="images/biryani.webp" alt="Biryani">
+                                <div class="menu-details">
+                                    <h2 id="menu_name">Biryani</h2>
+                                    <p id="description">Lorem ipsum dolor sit amet.</p>
+                                    <p id="price">₱250</p>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span><br/>
+                                    <button class="order-now">Order Now</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
         </header>
     </div>
 </body>

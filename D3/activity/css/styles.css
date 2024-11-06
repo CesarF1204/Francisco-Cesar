@@ -73,18 +73,18 @@
     width: 550px;
 }
 
-#home span, #about span{
+#home span, #about span, #menu span, .menu-details h2{
     color: #FAC031;
 }
 
-#home .tagline {
+#home p.tagline {
     margin-left: 50px;
     margin-right: 800px;
     margin-bottom: 50px;
     padding: 25px;
 }
 
-#about .tagline{
+#about p.tagline{
     margin-bottom: 50px;
 }
 
@@ -92,10 +92,16 @@
     position: absolute;
     top: 150px;
     right: 100px;
+    transition: transform 0.3s;
+}
+
+#home img:hover, #about img:hover{
+    transform: scale(1.1);
 }
 
 #about img{
     width: 900px;
+    transition: transform 0.3s;
 }
 
 #about h1, #about h2{
@@ -112,5 +118,46 @@
 }
 
 .order-button:hover{
+    background-color: #ff6347;
+}
+
+/* Menu */
+.menu-container ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+#menu div.menu-container h1{
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.menu-container ul.menu-img li img {
+    width: 300px;
+    height: 300px;
+    margin: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-details{
+    text-align: center;
+    line-height: 25px;
+}
+
+button.order-now{
+    border: none;
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button.order-now:hover{
+    transform: scale(1.1);
     background-color: #ff6347;
 }
