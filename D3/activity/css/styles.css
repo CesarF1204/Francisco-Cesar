@@ -73,6 +73,7 @@ html {
 #home, #about{
     display: flex;
     margin-bottom: 100px;
+    padding: 20px;
 }
 
 #home h1, #about h1{
@@ -81,7 +82,7 @@ html {
     width: 550px;
 }
 
-#home span, #about span, #menu span, .menu-details h2{
+#home span, #about span, #menu span, .menu-details h2, #gallery span, #review span{
     color: #FAC031;
 }
 
@@ -130,27 +131,31 @@ html {
 }
 
 /* Menu */
-.menu-container ul {
+#menu, #gallery, #review{
+    margin-bottom: 100px;
+}
+
+.menu-container ul, .review-container ul{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     list-style: none;
 }
 
-#menu div.menu-container h1{
+#menu div.menu-container h1, #gallery div.gallery-container h1, #review div.review-container h1{
     font-size: 4.5em;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.menu-container ul.menu-img li img {
+.menu-container ul.menu-img li img{
     width: 300px;
     height: 300px;
     margin: 20px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.menu-details{
+.menu-details, .review-details{
     text-align: center;
     line-height: 25px;
 }
@@ -168,4 +173,64 @@ button.order-now{
 button.order-now:hover{
     transform: scale(1.1);
     background-color: #ff6347;
+}
+
+/* Gallery */
+.gallery-img{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+
+.gallery-item{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Review */
+.review-container ul{
+    display: flex;
+    flex-wrap: wrap;          /* Allows items to wrap to the next line if there's not enough space */
+    justify-content: center;   /* Centers all .review-item elements horizontally */
+    gap: 20px;                 /* Adds space between each .review-item */
+}
+.review-item{
+    display: flex;
+    flex-direction: column;    /* Stacks the image and text vertically */
+    align-items: center;       /* Centers items horizontally */
+    text-align: center;        /* Centers text within the container */
+    gap: 10px;                 /* Adds space between the image and description */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1); 
+    width: 300px;
+}
+
+.review-details{
+    max-width: 600px;          /* Limits width of text area */
+    padding: 10px;
+}
+
+.profile-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 6px solid #ccc;
 }
