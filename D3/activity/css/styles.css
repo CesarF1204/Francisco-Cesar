@@ -62,7 +62,7 @@ html {
 
 /* Header Section */
 .header{
-    background-image: url("/Francisco-Cesar/D3/activity/images/bg2.jpg");;
+    background-image: url("../images/bg2.jpg");;
     padding: 30px;
     margin-top: 100px;
     margin-left: 20px;
@@ -70,7 +70,7 @@ html {
     box-shadow: 0 4px 8x rgba(0, 0, 0, 0.1);
 }
 
-#home, #about{
+#home, #about, #contact div.contact-details{
     display: flex;
     margin-bottom: 100px;
     padding: 20px;
@@ -82,7 +82,7 @@ html {
     width: 550px;
 }
 
-#home span, #about span, #menu span, .menu-details h2, #gallery span, #review span{
+#home span, #about span, #menu span, .menu-details h2, #gallery span, #review span, #contact span, #team span{
     color: #FAC031;
 }
 
@@ -142,7 +142,7 @@ html {
     list-style: none;
 }
 
-#menu div.menu-container h1, #gallery div.gallery-container h1, #review div.review-container h1{
+#menu div.menu-container h1, #gallery div.gallery-container h1, #review div.review-container h1, #contact h1, #team h1{
     font-size: 4.5em;
     margin-bottom: 10px;
     text-align: center;
@@ -233,4 +233,73 @@ button.order-now:hover{
     margin-top: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 6px solid #ccc;
+    transition: transform 0.3s;
+}
+
+.profile-img:hover{
+    transform: scale(1.1);
+}
+
+/* Contact - Order */
+.contact-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"]{
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#submit-btn{
+    background-color: #FAC031;
+    color: white;
+    padding: 15px 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Our Team */
+#team div.team-container{
+    background-image: url("../images/bg1.jpg");
+}
+
+.team-profile-img{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+    border: 1px solid rgb(213, 210, 210);
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.team-profile-img:hover{
+    transform: scale(1.1);
+}
+
+.team-img{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.team-img li{
+    display: inline-block;
 }
