@@ -1,0 +1,68 @@
+*{
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures ppadding and border do not increase */
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+#heading{
+    margin: 100px 0 auto;
+    text-align: center;
+}
+
+#loanCalculatorContainer{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#loanCalculatorForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#loanCalculatorForm label{
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+#loanCalculatorForm input[type="text"],
+#loanCalculatorForm input[type="number"]{
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#loanCalculatorForm input[type="submit"]{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#loanCalculatorForm input[type="submit"]:hover{
+    background-color: #357abd;
+}
+
+#calculated_payment{
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #3A88FF;
+    text-align: center;
+    font-weight: bold;
+}
