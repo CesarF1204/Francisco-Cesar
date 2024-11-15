@@ -35,7 +35,6 @@ const displayProductList = async() => {
                             <p class="card-text">${truncated_description}</p>
                         </div>
                     </div>
-
                     <!-- Preview Image Modal -->
                     <div class="modal fade" id="imageModal${index}" tabindex="-1" aria-labelledby="imageModalLabel${index}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
