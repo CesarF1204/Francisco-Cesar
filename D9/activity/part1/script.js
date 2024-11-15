@@ -25,7 +25,7 @@ const displayProductList = async() => {
 
             // Generate HTML markup for each product
             html += `
-                    <div class="card p-2 m-2" style="width: 18rem;">
+                    <div class="card p-2 m-2">
                         <div class="d-flex justify-content-center">
                             <img src="${product.image}" class="card-image card-img-top" data-bs-toggle="modal" data-bs-target="#imageModal${index}" onclick="showImage('${product.image}', '${fixed_product_title}', ${index})">
                         </div>
