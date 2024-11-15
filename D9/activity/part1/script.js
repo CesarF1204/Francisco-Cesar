@@ -22,7 +22,6 @@ const displayProductList = async() => {
 
             // Generate HTML markup for each product
             html += `
-                
                     <div class="card p-2 m-2" style="width: 18rem;">
                         <div class="d-flex justify-content-center">
                             <img src="${product.image}" class="card-image card-img-top ">
@@ -33,7 +32,6 @@ const displayProductList = async() => {
                             <p class="card-text">${truncated_description}</p>
                         </div>
                     </div>
-                
             `;
         });
 
