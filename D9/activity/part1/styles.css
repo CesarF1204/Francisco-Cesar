@@ -17,6 +17,12 @@ h1{
 .card-image {
     width: 150px;
     height: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card-image:hover {
+    transform: scale(1.1);
 }
 
 .card-text {
