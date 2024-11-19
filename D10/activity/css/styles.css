@@ -1,0 +1,18 @@
+/* Reset all margin and adding on elements and apply box-sizing */
+*{
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures ppadding and border do not increase */
+}
+
+#bookContainer{
+    display: none;
+}
+
+#availableBooks{
+    display: none;
+}
+
+#borrowedBooks{
+    display: none;
+}
