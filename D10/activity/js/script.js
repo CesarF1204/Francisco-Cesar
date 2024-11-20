@@ -116,13 +116,13 @@ function addBook(event){
 */
 function borrowBook(event) {
     /* Get the row of the clicked button */
-    const selected_row = event.target.closest('tr'); // Find the row of the clicked button
+    const selected_row = event.target.closest('tr');
     /* Get the title of the book */
-    const book_title = selected_row.querySelector('#title').textContent; // Get the title of the book
+    const book_title = selected_row.querySelector('#title').textContent;
     /* Get the author of the book */
-    const book_author = selected_row.querySelector('#author').textContent; // Get the title of the book
+    const book_author = selected_row.querySelector('#author').textContent;
     /* Get the genre of the book */
-    const book_genre = selected_row.querySelector('#genre').textContent; // Get the title of the book
+    const book_genre = selected_row.querySelector('#genre').textContent;
 
     /* Find the book in the library */
     const book = library.books.find(book => book.title === book_title);
