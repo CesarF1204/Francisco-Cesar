@@ -1531,10 +1531,12 @@ You are managing a database for a movie rental system. You will first create a d
 <p>1.1 <strong>Step 1</strong>: Create a new database called <code>MovieRental</code>.</p>
 <p><strong>Your Query</strong>:</p>
 <pre><code class="language-javascript">// Write the query here to create the database
+use MovieRental;
 </code></pre>
 <p>1.2 <strong>Step 2</strong>: Create a collection named <code>Movies</code>.</p>
 <p><strong>Your Query</strong>:</p>
 <pre><code class="language-javascript">// Write the query here to create the collection
+db.createCollection("Movies");
 </code></pre>
 <p>1.3 <strong>Step 3</strong>: Insert the following 20 sample documents into the <code>Movies</code> collection:</p>
 <pre><code class="language-json">[
