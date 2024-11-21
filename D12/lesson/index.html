@@ -1,0 +1,40 @@
+1. Find all producs with reviews rated 5
+db.products.find({ "reviews.rating:" 5 })
+
+2. Find all reviews for a specific product
+db.products.find({ name: "Smartphone" }, { reviews: 1 })
+
+3. Count the number of reviews per product
+db.products.aggregate([
+    { $unwind: "$reviews" },
+    { $group: { _id: "$name", reviewCount: { $sum: 1 } } }
+])
+
+Scenario 3: Social Networking
+
+Use Case:
+	- Users connect with each other
+
+
+Updating Friends:
+    db.Users.updateOne({_id: ObjectId("673dce7ef8610980165bc52a")}, { $set: {friends: [ ObjectId("673dce7ef8610980165bc52b"), ObjectId("673dce7ef8610980165bc52c") ]}})
+
+    db.Users.updateOne({_id: ObjectId("673dce7ef8610980165bc52b")}, { $set: {friends: [ ObjectId("673dce7ef8610980165bc52a") ]}})
+
+    db.Users.updateOne({_id: ObjectId("673dce7ef8610980165bc52c")}, { $set: {friends: [ ObjectId("673dce7ef8610980165bc52a") ]}})
+
+----
+    {
+        _id: ObjectId('673dce640f2d48383e47985a'),
+        name: 'Alice Johnson',
+        friendCount: 1
+    }
+    - count the no. of friends for each users
+
+    db.users.aggregate([
+        { $match: { _id: { $in: [ObjectId("USER_ID_1"), ObjectId("USER_ID_2")] } } },
+        { $project: { friends: 1 } }
+    ])
+    - finding mutual/common friend
+
+
