@@ -1,8 +1,56 @@
 1. Retrieve all courses in the "Programming" category.
-db.courses.find({ category: ObjectId("673ddae433fc297a2c5ff98b")});
+db.courses.aggregate([
+  {
+    $lookup: {
+      from: "categories",
+      localField: "category",
+      foreignField: "_id",
+      as: "category_info"
+    }
+  },
+  {
+    $unwind: "$category_info"
+  },
+  {
+    $match: {
+      "category_info.name": "Programming"
+    }
+  },
+  {
+    $project: {
+      _id: 1,
+      title: 1,
+      description: 1,
+      category: "$category_info.name",
+      instructor: 1,
+      students: 1,
+      reviews: 1
+    }
+  }
+]);
 
 2. Retrieve all students enrolled in the course "Introduction to MongoDB".
-db.courses.find({ title: "Introduction to MongoDB" }, { students: 1, _id: 0});
+db.courses.aggregate([
+  {
+    $match: {
+      title: "Introduction to MongoDB"
+    }
+  },
+  {
+    $lookup: {
+      from: "students",
+      localField: "students",
+      foreignField: "_id",
+      as: "student_info"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      studentName: "$student_info.name",
+    }
+  }
+]);
 
 3. Retrieve course details, including category and instructor information, for all courses.
 db.courses.aggregate([
