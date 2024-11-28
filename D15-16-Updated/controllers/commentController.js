@@ -38,7 +38,7 @@ const getCommentsByBlog = async (req, res) => {
         const { id: blogId } = req.params;
 
         /* Find all comments for the specific blog, optionally populating additional fields */
-        const comment = await Comment.find({ blog: blogId }).populate('text');
+        const comment = await Comment.find({ blog: blogId }).populate('blog', 'title').populate('user', 'name');
         res.status(200).json(comment);
     }
     catch(error){
