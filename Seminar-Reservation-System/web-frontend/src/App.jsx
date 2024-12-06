@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import CreateSeminar from './pages/CreateSeminar';
+import SeminarDetails from './components/SeminarDetails';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         {isLoggedIn && (
           <>
             <Route path="/dashboard" element={<Dashboard user={data} />} />
+            <Route path="/seminar/:id" element={<SeminarDetails />} />
             {data.role === 'admin' && 
               <Route path="/create_seminar" element={<CreateSeminar />} />
             }

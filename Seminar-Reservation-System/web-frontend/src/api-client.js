@@ -79,4 +79,22 @@ const fetchAllSeminar = async () => {
     return data;
 }
 
-export {register, signIn, signOut, validateToken, fetchAllSeminar};
+const fetchSeminarById = async (id) => {
+    const response = await fetch(`${API_BASE_URL}/api/seminars/${id}`, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(data.message);
+    }
+
+    return data;
+};
+
+export {register, signIn, signOut, validateToken, fetchAllSeminar, fetchSeminarById};
