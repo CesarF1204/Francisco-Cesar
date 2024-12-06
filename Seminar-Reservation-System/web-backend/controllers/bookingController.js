@@ -32,8 +32,7 @@ const updateBookingStatus = async (req, res) => {
     try {
         const { id } = req.params;
         const { paymentStatus } = req.body;
-console.log('paymentStatus :>> ', paymentStatus);
-console.log('check:>> ', !['pending', 'confirmed', 'rejected'].includes(paymentStatus));
+
         // Validate paymentStatus
         if (!['pending', 'confirmed', 'rejected'].includes(paymentStatus)) {
         return res.status(400).json({ message: 'Invalid payment status' });

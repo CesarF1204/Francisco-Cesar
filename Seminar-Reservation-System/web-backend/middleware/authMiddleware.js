@@ -15,4 +15,23 @@ const authMiddleware = async (req, res, next) => {
     }
 };
 
-export default authMiddleware;
+const verifyToken = (req, res, next) => {
+    const token = req.cookies["auth_token"];
+
+    if (!token) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    try {
+        // Verify the token and extract the payload
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.userId = decoded.userId;
+        req.firstName = decoded.firstName;
+        req.role = decoded.role;
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+};
+
+export { authMiddleware, verifyToken };
