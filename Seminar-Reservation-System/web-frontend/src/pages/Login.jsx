@@ -28,7 +28,6 @@ const Login = () => {
             await queryClient.invalidateQueries("validateToken", { exact: true });
             /* Navigate to dashboard page */
             navigate("/dashboard");
-
         },
         onError: (error) => {
             /* Show error toast  */

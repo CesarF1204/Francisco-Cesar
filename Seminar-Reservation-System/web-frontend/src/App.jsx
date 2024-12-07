@@ -7,8 +7,6 @@ import Dashboard from './pages/Dashboard';
 import CreateSeminar from './pages/CreateSeminar';
 import SeminarDetails from './components/SeminarDetails';
 
-
-
 function App() {
   const { isLoggedIn, data } =  useAppContext();
 
