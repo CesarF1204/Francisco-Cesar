@@ -6,10 +6,14 @@ import { useAppContext } from '../contexts/AppContext';
 import { FaArrowLeft } from "react-icons/fa";
 
 const SeminarDetails = () => {
-    const { id } = useParams();  // Get the seminar ID from the URL
+    /* Get the seminar ID from the URL parameters */
+    const { id } = useParams();
+    /* Extract showToast function from context for displaying notifications */
     const {showToast} = useAppContext();
+    /* Navigate to different routes */
     const navigate = useNavigate();
 
+    /* Fetch seminar details using react-query's useQuery hook */
     const { data: seminar = [], isLoading, isError } = useQuery(
         "fetchSeminarById",
         () => apiClient.fetchSeminarById(id),
@@ -19,10 +23,12 @@ const SeminarDetails = () => {
         }
     );
 
+    /* Loading state: display loading message while data is being fetched */
     if (isLoading) {
         return <p>Loading seminar details...</p>;
     }
 
+    /* Error state: show error toast if there is an issue loading data */
     if (isError) {
         showToast({ message: "Failed to load seminar details. Please try again later.", type: "ERROR" })
     }

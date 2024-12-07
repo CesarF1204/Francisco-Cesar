@@ -6,32 +6,38 @@ import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../contexts/AppContext';
 
 const Login = () => {
-    const navigate = useNavigate()
+    /* Navigate to different routes */
+    const navigate = useNavigate();
+    /* Extract showToast function from context for displaying notifications */
     const {showToast} = useAppContext();
+    /* Initialize the React Query client to manage cache and query state */
     const queryClient = useQueryClient();
 
+    /* Initialize the React Query client to manage cache and query state */
     const {
         register,
         formState: { errors },
         handleSubmit
     } = useForm();
 
+    /* Set up the mutation for sign-in API call */
     const mutation = useMutation(apiClient.signIn, {
         onSuccess: async () => {
-            // 1. show the toast
+            /* Show success toast */
             showToast({ message: "Sign in Successful", type: "SUCCESS" })
             await queryClient.invalidateQueries("validateToken", { exact: true });
-            // 2. navigate to dashboard page
+            /* Navigate to dashboard page */
             navigate("/dashboard");
 
         },
         onError: (error) => {
-            // show the toast
+            /* Show error toast  */
             showToast({ message: error.message, type: "ERROR"});
             navigate("/sign_in");
         }
     })
 
+    /* Handle form submission */
     const onSubmit = handleSubmit((data)=>{
         mutation.mutate(data)
     })

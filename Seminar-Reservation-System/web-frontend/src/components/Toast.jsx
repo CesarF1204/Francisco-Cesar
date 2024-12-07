@@ -3,10 +3,10 @@ import { useEffect } from "react";
 const Toast = ({ message, type, onClose }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
-        onClose(); // Automatically close the toast after 5 seconds
+        onClose(); /* Automatically close the toast after 5 seconds */
         }, 5000);
 
-        return () => clearTimeout(timer); // Clean up timer on component unmount
+        return () => clearTimeout(timer); /* Clean up timer on component unmount */
     }, [onClose]);
 
     const styles =

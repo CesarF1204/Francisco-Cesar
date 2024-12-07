@@ -5,7 +5,10 @@ import * as apiClient from '../api-client';
 import { useAppContext } from '../contexts/AppContext';
 
 const Seminar = () => {
+    /* Extract showToast function from context for displaying notifications */
     const {showToast} = useAppContext();
+
+    /* Fetch seminars data using react-query's useQuery hook */
     const { data: seminars = [], isLoading, isError } = useQuery(
         "fetchSeminars",
         apiClient.fetchAllSeminar,
@@ -15,10 +18,12 @@ const Seminar = () => {
         }
     );
 
+    /* Loading state: display loading message while data is being fetched */
     if (isLoading) {
         return <p>Loading seminars...</p>;
     }
 
+    /* Error state: show error toast if there is an issue loading data */
     if (isError) {
         showToast({ message: "Failed to load seminars. Please try again later.", type: "ERROR" })
     }

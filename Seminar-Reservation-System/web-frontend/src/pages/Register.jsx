@@ -5,41 +5,38 @@ import * as apiClient from '../api-client';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../contexts/AppContext';
 
-export const RegisterFormData = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-};
-
 const Register = () => {
-    const navigate = useNavigate()
+    /* Navigate to different routes */
+    const navigate = useNavigate();
+    /* Extract showToast function from context for displaying notifications */
     const {showToast} = useAppContext();
+    /* Initialize the React Query client to manage cache and query state */
     const queryClient = useQueryClient();
 
+    /* Use useForm hook to manage registration, validation, and submission */
     const {
-        register,
-        watch,
-        formState: { errors },
-        handleSubmit
+        register, /* Register input fields with validation rules */
+        watch, /* Watch the current value of a specific input field */
+        formState: { errors }, /* Extract form validation errors */
+        handleSubmit /* Handle form submission */
     } = useForm();
 
+    /* Mutation for registering the user */
     const mutation = useMutation(apiClient.register, {
         onSuccess: async () => {
-            // 1. show the toast
+            /* Show success toast */
             showToast({ message: "Registered Successful", type: "SUCCESS" })
             await queryClient.invalidateQueries("validateToken")
-            // 2. navigate to sign-in page
-            navigate("/");
-
+            /* Navigate to Login page */
+            navigate("/sign_in");
         },
         onError: (error) => {
-            // show the toast
+            /* Show error toast  */
             showToast({ message: error.message, type: "ERROR"})
         }
     })
 
+    /* Handle form submission */
     const onSubmit = handleSubmit((data)=>{
         mutation.mutate(data)
     })

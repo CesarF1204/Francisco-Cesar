@@ -6,11 +6,11 @@ import App from './App.jsx'
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AppContextProvider } from "./contexts/AppContext.jsx";
 
-// Create a new QueryClient instance
+/* Create a new QueryClient instance */
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      retry: 0, // Disable retry on failed queries
+      retry: 0, /* Disable retry on failed queries */
     },
   },
 });
