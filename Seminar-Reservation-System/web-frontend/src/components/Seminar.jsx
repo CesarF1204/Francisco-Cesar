@@ -9,19 +9,15 @@ const Seminar = () => {
     const {showToast} = useAppContext();
 
     /* Fetch seminars data using react-query's useQuery hook */
-    const { data: seminars = [], isLoading, isError } = useQuery(
+    const { data: seminars = [], isError } = useQuery(
         "fetchSeminars",
         apiClient.fetchAllSeminar,
         {
-            refetchOnWindowFocus: false, // Optional: Disable refetching on window focus
-            retry: 1, // Optional: Number of retry attempts
+            suspense: true, /* Enables React's Suspense mode, allowing the component to wait for data to load before rendering. */
+            refetchOnWindowFocus: false, /* Optional: Disable refetching on window focus */
+            retry: 1, /* Optional: Number of retry attempts */
         }
     );
-
-    /* Loading state: display loading message while data is being fetched */
-    if (isLoading) {
-        return <p>Loading seminars...</p>;
-    }
 
     /* Error state: show error toast if there is an issue loading data */
     if (isError) {

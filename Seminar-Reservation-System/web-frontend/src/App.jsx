@@ -14,9 +14,12 @@ function App() {
     <Router>
       {isLoggedIn && <AppNavbar user={data} />}
       <Routes>
-        {/* Redirect to /dashboard if logged in, otherwise stay at / */}
+        {/* Redirect to /dashboard if logged in, otherwise redirect to login page */}
         <Route path="/sign_in" element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login />} />
         
+        {/* Redirect to /dashboard if logged in, otherwise redirect to registration page */}
+        <Route path="/register" element={isLoggedIn ? <Navigate to="/dashboard" /> : <Register />} />
+
         {/* Protected route: only accessible if logged in */}
         {isLoggedIn && (
           <>
@@ -27,10 +30,7 @@ function App() {
             }
           </>
         )}
-        
-        {/* Public route */}
-        <Route path="/register" element={<Register />} />
-        
+
         {/* Fallback to home for undefined routes */}
         <Route path="*" element={<Navigate to="/sign_in" />} />
       </Routes>

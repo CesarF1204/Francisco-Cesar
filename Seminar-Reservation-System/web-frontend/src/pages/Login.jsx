@@ -44,8 +44,6 @@ const Login = () => {
     return (
         <div className="flex flex-col items-center mt-12">
             <h1 className="text-2xl font-bold">Login</h1>
-
-
             <form className="flex flex-col max-w-sm w-full" onSubmit={onSubmit}>
                 <label htmlFor="email" className="mb-2 font-medium">Email:</label>
                 <input
@@ -54,11 +52,9 @@ const Login = () => {
                     className="p-2 rounded border border-gray-300 ring-2 ring-black-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-red-500"
                     {...register("email", { required: "*This field is required" })}
                 />
-
                 {errors.email && (
                     <span className="text-red-500">{errors.email.message}</span>
                 )}
-            
                 <label htmlFor="password" className="mb-2 font-medium">Password:</label>
                 <input
                     type="password"
@@ -72,13 +68,10 @@ const Login = () => {
                         },
                     })}
                 />
-
                 {errors.password && (
                     <span className="text-red-500">{errors.password.message}</span>
                 )}
-
                 <button type="submit" className="py-2 px-4 mt-4 rounded bg-blue-500 text-white hover:bg-blue-600">Login</button>
-
                 <p className="text-sm mt-2">
                     No account yet?{' '}
                     <span

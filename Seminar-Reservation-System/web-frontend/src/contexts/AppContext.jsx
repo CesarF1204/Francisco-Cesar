@@ -17,7 +17,8 @@ const showToast = (toastMessage) => {
 };
 
 /* Check if the user is logged in using a token validation query */
-const { data, isError } = useQuery("validateToken", apiClient.validateToken, {
+const { data } = useQuery("validateToken", apiClient.validateToken, {
+    suspense: true, /* Enables React's Suspense mode, allowing the component to wait for data to load before rendering. */
     retry: false,
 });
 
@@ -26,7 +27,7 @@ return (
         value={{
             showToast,
             data: data || {},
-            isLoggedIn: data?.userId ? true : false
+            isLoggedIn: data.userId ? true : false
         }}
     >
         {/* Render the toast component if a toast message is present */}

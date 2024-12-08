@@ -14,19 +14,15 @@ const SeminarDetails = () => {
     const navigate = useNavigate();
 
     /* Fetch seminar details using react-query's useQuery hook */
-    const { data: seminar = [], isLoading, isError } = useQuery(
+    const { data: seminar = [], isError } = useQuery(
         "fetchSeminarById",
         () => apiClient.fetchSeminarById(id),
         {
-            refetchOnWindowFocus: false, // Optional: Disable refetching on window focus
-            retry: 1, // Optional: Number of retry attempts
+            suspense: true, /* Enables React's Suspense mode, allowing the component to wait for data to load before rendering. */
+            refetchOnWindowFocus: false, /* Optional: Disable refetching on window focus */
+            retry: 1, /* Optional: Number of retry attempts */
         }
     );
-
-    /* Loading state: display loading message while data is being fetched */
-    if (isLoading) {
-        return <p>Loading seminar details...</p>;
-    }
 
     /* Error state: show error toast if there is an issue loading data */
     if (isError) {
@@ -39,13 +35,11 @@ const SeminarDetails = () => {
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h1 className="text-3xl font-semibold text-gray-800">{title}</h1>
             <p className="text-lg text-gray-600 mt-2">{description}</p>
-
             <div className="seminar-info mt-6">
                 <p className="text-md text-gray-700"><strong>Date:</strong> {new Date(date).toLocaleDateString()}</p>
                 <p className="text-md text-gray-700"><strong>Time:</strong> {timeFrame.from} - {timeFrame.to}</p>
                 <p className="text-md text-gray-700"><strong>Venue:</strong> {venue}</p>
             </div>
-
             <div className="speaker-info mt-8">
                 <h3 className="text-xl font-semibold text-gray-800">Speaker</h3>
                 <div className="speaker mt-4 flex items-center space-x-4">
@@ -69,12 +63,10 @@ const SeminarDetails = () => {
                 </div>
                 </div>
             </div>
-
             <div className="seminar-fee mt-6">
                 <p className="text-md text-gray-700"><strong>Fee:</strong> ₱{fee}</p>
                 <p className="text-md text-gray-700"><strong>Available Slots:</strong> {slotsAvailable}</p>
             </div>
-
             <button  className="go-back-btn mt-6 flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition" onClick={() => navigate(-1)}>
                 <FaArrowLeft className="left-arrow mr-2" /> Go Back
             </button>
