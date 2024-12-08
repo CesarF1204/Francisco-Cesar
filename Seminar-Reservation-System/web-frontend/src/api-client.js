@@ -110,11 +110,11 @@ const fetchAllSeminar = async () => {
 }
 
 /* 
-    Fetch All Seminars function:
-    Sends a GET request to the /seminars endpoint to retrieve a list of all available seminars.
+    Fetch Specific Seminar:
+    Sends a GET request to the /seminars/${id} endpoint to retrieve an specific seminar and to fetch its details.
 */
 const fetchSeminarById = async (id) => {
-    /* Sending a GET request to fetch all seminars */
+    /* Sending a GET request to fetch specific seminar */
     const response = await fetch(`${API_BASE_URL}/api/seminars/${id}`, {
         method: "GET",
         credentials: "include",
