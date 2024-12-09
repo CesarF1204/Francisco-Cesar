@@ -11,6 +11,9 @@ export const AppContextProvider = ({ children }) => {
 /* State for toast messages */
 const [toast, setToast] = useState(undefined);
 
+/* State to track if the user logged in successfully */
+const [loginSuccess, setLoginSuccess] = useState(false);
+
 /* Function to show a toast message */
 const showToast = (toastMessage) => {
     setToast(toastMessage);
@@ -20,14 +23,16 @@ const showToast = (toastMessage) => {
 const { data } = useQuery("validateToken", apiClient.validateToken, {
     suspense: true, /* Enables React's Suspense mode, allowing the component to wait for data to load before rendering. */
     retry: false,
+    enabled: loginSuccess,
 });
 
 return (
     <AppContext.Provider
         value={{
             showToast,
+            setLoginSuccess,
             data: data || {},
-            isLoggedIn: data.userId ? true : false
+            isLoggedIn: data?.userId ? true : false
         }}
     >
         {/* Render the toast component if a toast message is present */}

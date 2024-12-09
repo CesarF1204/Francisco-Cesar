@@ -15,7 +15,7 @@ const LogOutButton = () => {
     const mutation = useMutation(apiClient.signOut, {
         /* On success: invalidate the token validation query and navigate to homepage */
         onSuccess: async () => {
-        await queryClient.invalidateQueries("validateToken", { exact: true });
+            await queryClient.invalidateQueries("validateToken", { exact: true });
             showToast({ message: "Logged Out!", type: "ERROR" });
             navigate("/");
         },
@@ -30,11 +30,8 @@ const LogOutButton = () => {
     };
 
     return (
-        <button
-        onClick={handleClick}
-        className="btn btn-danger mt-3"
-        >
-        Log Out
+        <button onClick={handleClick} className="btn btn-danger mt-3">
+            Log Out
         </button>
     );
 };
